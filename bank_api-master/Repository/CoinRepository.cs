@@ -20,7 +20,7 @@ namespace Bank.Repository
             _context.SaveChanges();
         }
 
-        public void Delete(int id)
+        public void Delete (int id)
         {
             var deleteCoin = _context.Coins.FirstOrDefault(dc => dc.Id == id);
             deleteCoin.Deleted = true;
@@ -29,7 +29,7 @@ namespace Bank.Repository
         }
 
 
-        public Coin Edit(Coin coin)
+        public Coin EditCoin(Coin coin)
         {
             var editedCoin = _context.Coins.FirstOrDefault(c => c.Id == coin.Id && !c.Deleted);
 
@@ -53,6 +53,13 @@ namespace Bank.Repository
         }
 
         public Coin GetCoinById(int coinId)
+        {
+            var coin = _context.Coins.FirstOrDefault(c => c.Id == coinId && !c.Deleted);
+
+            return coin;
+        }
+
+        public Coin GetCoin(int coinId)
         {
             var coin = _context.Coins.FirstOrDefault(c => c.Id == coinId && !c.Deleted);
 

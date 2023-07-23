@@ -7,7 +7,7 @@ using Bank.Interfaces;
 namespace Bank.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     public class CoinController : ControllerBase
     {
         private readonly ILogger<CoinController> _logger;
@@ -21,39 +21,35 @@ namespace Bank.Controllers
 
         // GET: /coin
         [HttpGet]
-        public ActionResult<List<Coin>> GetAll()
+        public ActionResult<List<Coin>> GetAll()    
         {
             return _coinRepository.GetAll();
         }
 
         // GET: /coin/5
-        [HttpGet("{id}")]
-        public ActionResult<Coin> GetCoinById(int id)
-        {
-            return _coinRepository.GetCoinById(id);
+        [HttpGet]
+        public ActionResult<Coin> GetCoin(int id)
+            {
+            return _coinRepository.GetCoin(id);
         }
 
         // POST: /coin
         [HttpPost]
-        public ActionResult<Coin> CreateCoin(Coin coin)
+        public ActionResult<Coin> AddCoin(Coin coin)
         {
             _coinRepository.CreateCoin(coin);
-            return CreatedAtAction(nameof(GetCoinById), new { id = coin.Id }, coin);
+            return CreatedAtAction(nameof(GetCoin), new { id = coin.Id }, coin);
         }
 
         // PUT: /coin/5
-        [HttpPut("{id}")]
-        public ActionResult<Coin> EditCoin(int id, Coin coin)
+        [HttpPut]
+        public ActionResult<Coin> EditCoin(Coin coin)
         {
-            if (id != coin.Id)
-            {
-                return BadRequest();
-            }
-            return _coinRepository.Edit(coin);
+            return _coinRepository.EditCoin(coin);
         }
 
         // DELETE: /coin/5
-        [HttpDelete("{id}")]
+        [HttpDelete]
         public ActionResult Delete(int id)
         {
             _coinRepository.Delete(id);
