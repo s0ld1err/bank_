@@ -19,12 +19,15 @@ namespace Bank.Controllers
             _coinRepository = coinRepository;
         }
 
-        // GET: /coin
+
+        // GET: /coin/GetAll
         [HttpGet]
-        public ActionResult<List<Coin>> GetAll()    
+        public ActionResult<IEnumerable<Coin>> GetAll()
         {
             return _coinRepository.GetAll();
         }
+
+
 
         // GET: /coin/5
         [HttpGet]

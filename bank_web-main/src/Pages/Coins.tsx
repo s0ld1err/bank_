@@ -3,6 +3,8 @@ import { Button } from 'react-bootstrap';
 import ComplexTable from '../Components/ComplexTable';
 import { useNavigate } from 'react-router-dom';
 import ApiFetch from '../service/ApiCalls/request';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const Coins = () => {
   const navigate = useNavigate();
@@ -28,7 +30,9 @@ const Coins = () => {
           <br/>
           <div style={{ marginBottom: '20px' }}>
             <span style={{ marginRight: '10px' }}>Add a new coin</span>
-            <Button variant="primary" onClick={() => { navigate("/addCoin") }} >Add</Button>
+            <Button variant="primary" onClick={() => { navigate("/addCoin") }}>
+              <FontAwesomeIcon icon={faPlus} />
+            </Button>
           </div>
         </div>
       )}

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import ApiFetch from '../service/ApiCalls/request';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 const AddCoin = () => {
   const navigate = useNavigate();
@@ -20,7 +22,7 @@ const AddCoin = () => {
       body: JSON.stringify({
         name,
         description
-      })
+      })  
     });
     navigate("/coins");
   };
@@ -53,7 +55,7 @@ const AddCoin = () => {
 
 
         <Button variant="primary" type="submit">
-          Submit
+          <FontAwesomeIcon icon={faPlus} />
         </Button>
       </Form>
     </div>

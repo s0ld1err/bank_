@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSave } from '@fortawesome/free-solid-svg-icons';
 import ApiFetch from '../service/ApiCalls/request';
 
 const EditCoin = () => {
@@ -66,7 +68,7 @@ const EditCoin = () => {
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          Save
+          <FontAwesomeIcon icon={faSave} />
         </Button>
       </Form>
     </div>

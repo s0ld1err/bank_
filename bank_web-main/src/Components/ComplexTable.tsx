@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+
 const ComplexTable = ({ data, url }: any) => {
     console.log("HERE: ");
     const navigate = useNavigate();
@@ -36,8 +39,12 @@ const ComplexTable = ({ data, url }: any) => {
                             <td style= {{fontWeight: '500'}}>{current.name}</td>
                             <td style={{fontStyle: 'italic' }}>{current.description}</td>
                             <td>
-                                <button onClick={() => onDelete(current.id)} className="btn btn-danger" style={{ marginRight: '10px' }}>Delete</button>
-                                <button onClick={() => { navigate(`/editCoin/${current.id}`) }} className="btn btn-primary">Edit</button>
+                                <button onClick={() => onDelete(current.id)} className="btn btn-danger" style={{ marginRight: '10px' }}>
+                                    <FontAwesomeIcon icon={faTrash} />
+                                </button>
+                                <button onClick={() => { navigate(`/editCoin/${current.id}`) }} className="btn btn-primary">
+                                    <FontAwesomeIcon icon={faEdit} />
+                                </button>
                             </td>
                         </tr>
                     ))}
