@@ -14,6 +14,7 @@ const App = () => {
                 <Route path='/' element={<Dashboard />} />
                 <Route path='/coins' element={<Coins />} />
                 <Route path='/coin/:id' element={<CoinDetails />} />
+                <Route path='/coin/name/:name' element={<CoinDetails />} />
                 <Route path='/addCoin' element={<AddCoin />} />
                 <Route path='/editCoin/:id' element={<EditCoin />} />
 

@@ -8,6 +8,10 @@ const requests = {
     addCoin: api_url + '/Coin/AddCoin',
     deleteCoin: api_url + '/Coin/Delete?id=',
     fetchCoin: api_url + '/Coin/GetCoin?id=',
+
+    fetchCoinByName: api_url + '/Coin/GetCoinByName?name=',
+
+
     editCoin : api_url + '/Coin/EditCoin'
 }
 export default requests;

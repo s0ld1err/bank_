@@ -10,22 +10,25 @@ const CoinDetails = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                let url = ApiFetch.fetchCoin;
+                let url;
                 if (id) {
-                    url += id;
+                    url = ApiFetch.fetchCoin + id;
                 }
                 if (name) {
-                    url += `&name=${name}`;
+                    url = ApiFetch.fetchCoinByName + name;
                 }
-                const response = await fetch(url);
-                const json = await response.json();
-                setCoin(json);
+                if (url) {
+                    const response = await fetch(url);
+                    const json = await response.json();
+                    setCoin(json);
+                }
             } catch (error) {
                 console.error(error);
             }
         }
         fetchData();
     }, [id, name])
+    
 
     return (
         <div>

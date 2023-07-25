@@ -36,6 +36,16 @@ namespace Bank.Controllers
             return _coinRepository.GetCoin(id);
         }
 
+        //name GET
+        [HttpGet]
+        public ActionResult<Coin> GetCoinByName(string name)
+        {
+            return _coinRepository.GetCoinByName(name);
+        }
+
+
+
+
         // POST: /coin
         [HttpPost]
         public ActionResult<Coin> AddCoin(Coin coin)

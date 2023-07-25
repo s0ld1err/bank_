@@ -9,6 +9,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 const Coins = () => {
   const navigate = useNavigate();
   const [data, setData] = useState(null);
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
