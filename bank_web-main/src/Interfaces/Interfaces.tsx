@@ -15,3 +15,8 @@ export interface DataTypeTradeOrder {
         name: string;
     };
 }
+
+export interface Coin {
+    name: string;
+    description: string;
+}
