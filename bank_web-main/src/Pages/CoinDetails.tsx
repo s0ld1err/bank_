@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ApiFetch from '../service/ApiCalls/request';
-import { Coin } from '../Interfaces/Interfaces'; // asigură-te că această cale este corectă
+import { Coin } from '../Interfaces/Interfaces'; 
 
 const CoinDetails = () => {
     const [coin, setCoin] = useState<Coin | null>(null);
@@ -36,7 +36,7 @@ const CoinDetails = () => {
                 <div>
                     <h1>{coin.name}</h1>
                     <p>{coin.description}</p>
-                    {/* Adaugă aici orice alte detalii dorești să afișezi */}
+                    {/* . */}
                 </div>
             )}
         </div>
